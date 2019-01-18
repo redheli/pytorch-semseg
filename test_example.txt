@@ -1,0 +1,2 @@
+python test.py  --model_path runs/segnet_camvid/45935/segnet_camvid_best_model.pkl --dataset camvid --img_path /media/max/DATA/camvid/SegNet-Tutorial/CamVid/val/0016E5_07959.png --out_path 0016E5_07959_v.png
+
