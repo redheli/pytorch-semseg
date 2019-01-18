@@ -195,6 +195,7 @@ def train(cfg, writer, logger):
                         "{}_{}_best_model.pkl".format(cfg["model"]["arch"], cfg["data"]["dataset"]),
                     )
                     torch.save(state, save_path)
+                    print('save model========: ',save_path)
 
             if (i + 1) == cfg["training"]["train_iters"]:
                 flag = False

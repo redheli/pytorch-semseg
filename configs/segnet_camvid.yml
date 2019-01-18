@@ -6,7 +6,7 @@ data:
     val_split: val
     img_rows: 360
     img_cols: 480
-    path: /media/max/DATA/camvid
+    path: /media/max/DATA/camvid/SegNet-Tutorial/CamVid
 training:
     train_iters: 30
     batch_size: 4
@@ -17,7 +17,6 @@ training:
         name: 'adam'
         lr: 1.0e-3
         weight_decay: 0.0005
-        momentum: [0.9,0.999]
     loss:
         name: 'cross_entropy'
         size_average: True

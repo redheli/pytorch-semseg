@@ -119,7 +119,7 @@ class CenterCrop(object):
 
 
 class RandomHorizontallyFlip(object):
-    def __init__(self, p):
+    def __init__(self, p=1):
         self.p = p
 
     def __call__(self, img, mask):

@@ -71,7 +71,7 @@ class camvidLoader(data.Dataset):
         img = img.transpose(2, 0, 1)
 
         img = torch.from_numpy(img).float()
-        lbl = torch.from_numpy(lbl).long()
+        lbl = torch.from_numpy(lbl.astype(np.uint8)).long()
         return img, lbl
 
     def decode_segmap(self, temp, plot=False):
@@ -104,7 +104,7 @@ class camvidLoader(data.Dataset):
                 Unlabelled,
             ]
         )
-        r = temp.copy()
+        r = temp.copy() # return a copy of temp
         g = temp.copy()
         b = temp.copy()
         for l in range(0, self.n_classes):
@@ -120,7 +120,7 @@ class camvidLoader(data.Dataset):
 
 
 if __name__ == "__main__":
-    local_path = "/home/meetshah1995/datasets/segnet/CamVid"
+    local_path = "/media/max/DATA/camvid/SegNet-Tutorial/CamVid"
     augmentations = Compose([RandomRotate(10), RandomHorizontallyFlip()])
 
     dst = camvidLoader(local_path, is_transform=True, augmentations=augmentations)
